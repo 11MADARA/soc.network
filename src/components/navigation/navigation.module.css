@@ -1,0 +1,22 @@
+.navigation{
+  grid-area: n;
+  background-color: rgb(255, 0, 0);
+  padding: 20px;
+}
+.item {
+  font-size: 5ch;
+  color: aliceblue;
+  text-decoration: none;
+
+}
+.active{
+  color:black;
+}
+.friend{
+  margin-top: 50px;
+}
+.BestFriends{
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  margin-top: 20px;
+}

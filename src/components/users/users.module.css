@@ -1,0 +1,19 @@
+.box{
+    display: grid;
+    grid-template-columns: 250px 600px 150px;
+}
+.img{
+    width:200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100px;
+}
+.body{
+    background-color: bisque;
+}
+.button{
+    color: green;
+}
+.selected{
+    color:whitesmoke;
+}
