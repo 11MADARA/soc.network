@@ -8,20 +8,20 @@ import UsersContainer from './components/users/usersContainer';
 
 const App = () => {
   return (
-      <div className='app-wrapper'>
-        <Header />
-        <NavContainer />
-        <div className='app-wrapper-content'>
-          <Routes>
-            <Route path="/profile/*"
-            element={<Profile />}/>
-            <Route path="/dialoges/*"
-            element={<DialogesContainer />}/>
-            <Route path="/users/*"
-            element={<UsersContainer />}/>
-          </Routes>
-        </div>
+    <div className='app-wrapper'>
+      <Header />
+      <NavContainer />
+      <div className='app-wrapper-content'>
+        <Routes>
+          <Route path="/profile/*"
+            element={<Profile />} />
+          <Route path="/dialoges/*"
+            element={<DialogesContainer />} />
+          <Route path="/users/*"
+            element={<UsersContainer />} />
+        </Routes>
       </div>
+    </div>
   );
 }
 

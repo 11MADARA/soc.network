@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 
 function Nav(props) {
-let eachFriend=props.dialogs.map(el=><Friend name={el.name} avaImg={el.avaImg} id={el.id}/> )
+  let eachFriend = props.dialogs.map(el => <Friend name={el.name} avaImg={el.avaImg} id={el.id} />)
 
   return (
     <nav className={s.navigation}>

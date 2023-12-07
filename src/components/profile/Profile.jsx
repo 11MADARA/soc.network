@@ -2,7 +2,7 @@ import React from "react";
 import Description from "./aboutProfile/description";
 import MyPostsContainer from "./myPosts/myPostsContainer";
 
- function Profile(){
+ function Profile(){ 
     return <div>
         <Description/>
         <MyPostsContainer />
