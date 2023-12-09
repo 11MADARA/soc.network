@@ -1,21 +1,46 @@
 .navigation{
   grid-area: n;
   background-color: rgb(16, 33, 43);
-  min-height: 744px;
-  padding: 20px;
+  width: 100px;
+  box-sizing: border-box;
+  padding: 10px;
+  transition: ease-in-out 0.3s;
+  overflow: hidden;
+}
+.navigation:hover{
+  width:256px;
+}
+hr{
+  height: 1px;
+  color:#919191;
+  margin: 15px 0;
+}
+.marg{
+  display:flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.img{
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 40px;
+  flex-shrink: 0;
+  fill:#424242;
 }
 .item {
-  font-size: 5ch;
+  transition: ease-in-out 0.3s;
+  margin-left: 15px;
+  font-size: 3ch;
   color: rgb(239, 251, 219);
   text-decoration: none;
 
 }
 .active{
   color:rgb(220,219, 255);
-  font-size: 6ch;
-}
-.friend{
-  margin-top: 50px;
+  font-size: 4ch;
 }
 .BestFriends{
   display: grid;

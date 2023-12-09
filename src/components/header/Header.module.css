@@ -9,3 +9,9 @@
   height: 90px;
   object-fit: cover;
 }
+.login{
+  float: right;
+}
+.button{
+  color:red;
+}
