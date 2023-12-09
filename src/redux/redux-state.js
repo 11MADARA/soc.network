@@ -10,5 +10,6 @@ let reducers=combineReducers({
 })
 
 let state=createStore(reducers);
+window.state=state;
 
 export default state;

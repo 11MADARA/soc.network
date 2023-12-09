@@ -7,12 +7,10 @@ function MyPosts(props) {
   let PostsElement = props.posts.map(p => <Post content={p.content} likes={p.likes} />);
   let newPostElement = React.createRef();
   let AddPost = () => {
-    debugger;
     props.AddPost()
   }
 
   let onTextChange = () => {
-    debugger;
     let Text = newPostElement.current.value;
     props.onTextChange(Text)
   }

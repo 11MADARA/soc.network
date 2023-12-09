@@ -15,13 +15,12 @@ let initialState = {
 
 
 const UsersReducer = (state = initialState, action) => {
-  debugger;
   switch (action.type) {
     case FOLLOW:
       return {
         ...state,
         users: state.users.map(u => {
-          return (u.id === action.id) ? ({ ...u, follow: true }) : u;
+          return (u.id === action.id) ? ({ ...u, followed: true }) : u;
         })
       }
 
@@ -29,7 +28,7 @@ const UsersReducer = (state = initialState, action) => {
       return {
         ...state,
         users: state.users.map(u => {
-          return (u.id === action.id) ? ({ ...u, follow: false }) : u;
+          return (u.id === action.id) ? ({ ...u, followed: false }) : u;
         })
       }
     case SET_USERS:
@@ -48,7 +47,6 @@ const UsersReducer = (state = initialState, action) => {
         usersCount: action.count,
       }
       case TRUGGLE_IS_FETCHING:
-        debugger;
       return {
         ...state,
         isFetching: action.isFetching,
@@ -58,28 +56,28 @@ const UsersReducer = (state = initialState, action) => {
   }
 }
 
-export const FollowAC = (userId) => ({
+export const follow = (userId) => ({
   type: FOLLOW,
   id: userId
 })
 
-export const UnfollowAC = (userId) => ({
+export const unfollow = (userId) => ({
   type: UNFOLLOW,
   id: userId
 })
-export const setUsersAC = (users) => ({
+export const setUsers = (users) => ({
   type: SET_USERS,
   users
 })
-export const setCurrentPageAC = (currentPage) => ({
+export const setCurrentPage = (currentPage) => ({
   type: SET_CURRENT_PAGE,
   currentPage: currentPage,
 })
-export const setUsersCountAC = (count) => ({
+export const setUsersCount = (count) => ({
   type: SET_USERS_COUNT,
   count: count,
 })
-export const TruggleIsFetchingAC = (isFetching) => ({
+export const truggleIsFetching = (isFetching) => ({
   type: TRUGGLE_IS_FETCHING,
   isFetching: isFetching
 })
