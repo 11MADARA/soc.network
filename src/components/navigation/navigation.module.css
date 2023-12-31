@@ -1,14 +1,19 @@
 .navigation{
   grid-area: n;
+  position: absolute;
+  margin-top: 30px;
   background-color: rgb(16, 33, 43);
-  width: 100px;
+  width: 90px;
+  height:-100px;
   box-sizing: border-box;
   padding: 10px;
   transition: ease-in-out 0.3s;
   overflow: hidden;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .navigation:hover{
-  width:256px;
+  width:340px;
 }
 hr{
   height: 1px;
@@ -23,27 +28,21 @@ hr{
 .img{
   margin-left: 10px;
   margin-right: 10px;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   object-fit: cover;
-  border-radius: 40px;
+  border-radius: 25px;
   flex-shrink: 0;
   fill:#424242;
 }
 .item {
   transition: ease-in-out 0.3s;
   margin-left: 15px;
-  font-size: 3ch;
+  font-size: 4ch;
   color: rgb(239, 251, 219);
   text-decoration: none;
-
 }
 .active{
   color:rgb(220,219, 255);
-  font-size: 4ch;
-}
-.BestFriends{
-  display: grid;
-  grid-template-columns: 3fr 3fr 3fr;
-  margin-top: 20px;
+  font-size: 5ch;
 }

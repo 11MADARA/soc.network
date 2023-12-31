@@ -1,3 +1,7 @@
+import { headerApi } from "../components/header/headerApi";
+import { profileApi } from "../components/profile/profileApi";
+import { setUserProfile } from "./profilePageReducer";
+
 const SET_USER_DATA="SET-USER-DATA";
 
 
@@ -27,3 +31,19 @@ export const setUserData=(userId,login,email)=>({
   type:SET_USER_DATA,
   data:{userId,login,email}
 })
+
+export const isAuthProfileTC=()=>{
+  return (dispatch)=>{
+    headerApi.isAuth()
+    .then(response => {
+      if(response.resultCode===0){
+        let {id,login,email}=response.data;
+        dispatch(setUserData(id,login,email));
+        profileApi.getProfile(id)
+        .then(response=>{
+            dispatch(setUserProfile(response.data))
+        })
+      }
+    }) 
+  }
+}

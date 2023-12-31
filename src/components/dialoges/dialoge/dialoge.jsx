@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import s from "./dialoge.module.css"
 const Dialoge=(props)=>{
     let path="/dialoges/"+props.id;
-    return<div>
+    return<div className={s.container}>
       <img className={s.img} src={props.avaImg}/>
       <NavLink className={s.item} to={path}>{props.name}</NavLink></div>
   }

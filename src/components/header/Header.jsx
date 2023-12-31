@@ -3,6 +3,7 @@ import a from "./Header.module.css";
 import logo from "../../logo.png"
 import { NavLink } from "react-router-dom";
  const Header=(props)=>{
+  debugger;
     return <header className={a.header}>
         <img className={a.img} src={logo} />
         <div className={a.login}> 

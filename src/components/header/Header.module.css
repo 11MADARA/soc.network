@@ -10,7 +10,9 @@
   object-fit: cover;
 }
 .login{
-  float: right;
+  position: absolute; /* или 'fixed', если нужно прикрепить к углу окна браузера */
+  top: 0;
+  right:0;
 }
 .button{
   color:red;

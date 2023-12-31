@@ -1,0 +1,127 @@
+
+
+.h1{
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+.login{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    margin:30px 0px;
+    background-color: rgb(255, 255,255, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    color: black;
+}
+.login:hover{
+    background-color: rgb(255, 255,255, 0.5);
+}
+.RemContainer{
+    display: flex;
+    flex-direction: row;
+}
+.checkbox{
+    margin-right: 3px;
+}
+.Remember{
+    white-space: nowrap;
+    font-size: 1.2cap;
+    color: white;
+}
+.Forget{
+    white-space: nowrap;
+    margin-left:15px;
+    font-size: 1.2cap;
+    color:white;
+    font-weight: 600;
+    text-decoration: none;
+}
+.Forget:hover{
+    text-decoration: underline;
+}
+.RegContainer{
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+}
+.Register{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 8px;
+}
+.Register:hover{
+    text-decoration: underline;
+}
+.RegLabel{
+    white-space: nowrap;
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.section{
+    position: relative;
+    max-width: 400px;
+    margin:100px 505px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+}
+.label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    max-width: 310px;
+    border-bottom: 2px solid #fff;
+}
+.icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    top: 20px;
+}
+
+.input {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover, 
+.input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: #fff !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+input:focus ~ div, 
+input:valid ~ div {
+    top: -5px;
+}
