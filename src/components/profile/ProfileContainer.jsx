@@ -8,7 +8,6 @@ import { compose } from "redux";
 
 export function withRouter(Children){
   return(props)=>{
-
      const match  = {params: useParams()};
      return <Children {...props}  match = {match}/>
  }
@@ -20,7 +19,6 @@ class ProfileContainer extends React.Component {
     if(!userId){
       userId=30456;
     }
-    debugger;
    this.props.getUserProfileTC(userId);
    this.props.getUserStatusTC(userId);
   }

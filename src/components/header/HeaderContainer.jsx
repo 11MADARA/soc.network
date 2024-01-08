@@ -3,9 +3,6 @@ import Header from "./Header";
 import { connect } from "react-redux";
 import { isAuthProfileTC, } from "../../redux/authReducer";
 class HeaderContainer extends React.Component{
-  componentDidMount(){
-   this.props.isAuthProfileTC();
-  }
   render(){
     return<Header {...this.props}/>
   }

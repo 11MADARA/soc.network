@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import DialogesContainer from './components/dialoges/dialogesContainer';
 import NavContainer from './components/navigation/navigationContainer';
@@ -7,9 +8,20 @@ import ProfileContainer from './components/profile/ProfileContainer';
 import HeaderContainer from './components/header/HeaderContainer';
 import Login from './components/login/login';
 import Setting from './components/settings/settings';
-const App = () => {
-  return (
-    <div className='background'>
+import { connect } from 'react-redux';
+import { initializeTC } from './redux/appReducer';
+import Preloader from './components/common/preloader/preloader';
+import { compose } from 'redux';
+
+class App extends React.Component{
+  componentDidMount(){
+    this.props.initializeTC();
+  }
+  render(){
+    if(!this.props.initialized){
+      return <Preloader/>
+    }
+    return<div className='background'>
       <div className='app-wrapper'>
         <HeaderContainer />
         <div className='container'>
@@ -33,8 +45,10 @@ const App = () => {
         </div>
       </div>
     </div>
-  );
+  };
 }
+const mapStateToProps=(state)=>({
+  initialized:state.app.initialized
+})
 
-
-export default App;
+export default compose(connect(mapStateToProps,{initializeTC}))(App);

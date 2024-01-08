@@ -4,8 +4,8 @@ const FOLLOW = "FOLLOW";
 const SET_USERS = "SET-USERS";
 const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
 const SET_USERS_COUNT = "SET-USERS-COUNT";
-const TRUGGLE_IS_FETCHING="TRUGGLE_IS_FETCHING";
-const FOLLOW_ON_PROCESS="FOLLOW_ON_PROCESS";
+const TRUGGLE_IS_FETCHING = "TRUGGLE_IS_FETCHING";
+const FOLLOW_ON_PROCESS = "FOLLOW_ON_PROCESS";
 
 
 let initialState = {
@@ -13,8 +13,8 @@ let initialState = {
   pageSize: 5,
   usersCount: 0,
   currentPage: 1,
-  isFetching:false,
-  following:[],
+  isFetching: false,
+  following: [],
 }
 
 
@@ -50,18 +50,18 @@ const UsersReducer = (state = initialState, action) => {
         ...state,
         usersCount: action.count,
       }
-      case TRUGGLE_IS_FETCHING:
+    case TRUGGLE_IS_FETCHING:
       return {
         ...state,
         isFetching: action.isFetching,
       }
-      case FOLLOW_ON_PROCESS:
-        return {
-          ...state,
-          following:action.following
-          ?[...state.following,action.userId]
-          :state.following.filter(id=>id!==action.userId)
-        }
+    case FOLLOW_ON_PROCESS:
+      return {
+        ...state,
+        following: action.following
+          ? [...state.following, action.userId]
+          : state.following.filter(id => id !== action.userId)
+      }
     default:
       return state;
   }
@@ -92,49 +92,41 @@ export const truggleIsFetching = (isFetching) => ({
   type: TRUGGLE_IS_FETCHING,
   isFetching: isFetching
 })
-export const followInProcess = (following,userId) => ({
+export const followInProcess = (following, userId) => ({
   type: FOLLOW_ON_PROCESS,
   following,
   userId,
 })
 
-export const getUsersTC =(pageNumber,pageSize)=>{
-  return (dispatch)=>{
+export const getUsersTC = (pageNumber, pageSize) => {
+  return async (dispatch) => {
     dispatch(truggleIsFetching(true));
     dispatch(setCurrentPage(pageNumber));
-  UsersApi.getUsers(pageNumber,pageSize)
-        .then(response => {
-            dispatch(setUsers(response.items));
-            dispatch(setUsersCount(response.totalCount))
-            dispatch(truggleIsFetching(false));
-        }) 
+    let response = await UsersApi.getUsers(pageNumber, pageSize)
+    dispatch(setUsers(response.items));
+    dispatch(setUsersCount(response.totalCount))
+    dispatch(truggleIsFetching(false));
   }
 }
 
-export const followTC =(userId)=>{
-  debugger;
-  return (dispatch)=>{
-   dispatch(followInProcess(true,userId));
-    UsersApi.postFollow(userId)
-        .then(response => {
-            if (response.resultCode === 0) {
-               dispatch(follow(userId))
-            }
-            dispatch(followInProcess(false, userId))
-        })
+export const followTC = (userId) => {
+  return async (dispatch) => {
+    dispatch(followInProcess(true, userId));
+    let response = await UsersApi.postFollow(userId)
+    if (response.resultCode === 0) {
+      dispatch(follow(userId))
+    }
+    dispatch(followInProcess(false, userId))
   }
 }
-export const unfollowTC =(userId)=>{
-  debugger;
-  return (dispatch)=>{
-   dispatch(followInProcess(true,userId));
-    UsersApi.deleteFollow(userId)
-        .then(response => {
-            if (response.resultCode === 0) {
-               dispatch(unfollow(userId))
-            }
-            dispatch(followInProcess(false, userId))
-        })
+export const unfollowTC = (userId) => {
+  return async (dispatch) => {
+    dispatch(followInProcess(true, userId));
+    let response = await UsersApi.deleteFollow(userId)
+    if (response.resultCode === 0) {
+      dispatch(unfollow(userId))
+    }
+    dispatch(followInProcess(false, userId))
   }
 }
 

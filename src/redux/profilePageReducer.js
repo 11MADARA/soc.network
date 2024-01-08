@@ -29,7 +29,7 @@ export const setUserStatus = (status) => ({
 let initialState = {
   posts: [
     { content: "hello guyZ", likes: "15" },
-    { content: "Durex xuynya", likes: "100" },
+    { content: "Durex xuynya", likes: "99" },
     { content: "BimBimBamBAm", likes: "20" }
   ],
   newPostText: "add new post here =>",
@@ -81,7 +81,6 @@ export const getUserStatusTC = (userId) => {
   return (dispatch) => {
     profileApi.getStatus(userId)
       .then(response => {
-        debugger;
         dispatch(setUserStatus(response.data))
       })
   }
