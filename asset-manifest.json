@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2a3903bf.css",
+    "main.js": "/static/js/main.837b893e.js",
+    "static/css/506.5ff388e5.chunk.css": "/static/css/506.5ff388e5.chunk.css",
+    "static/js/506.1915b9ba.chunk.js": "/static/js/506.1915b9ba.chunk.js",
+    "static/css/866.dae3bd39.chunk.css": "/static/css/866.dae3bd39.chunk.css",
+    "static/js/866.b0952b24.chunk.js": "/static/js/866.b0952b24.chunk.js",
+    "static/js/787.d4aba7ab.chunk.js": "/static/js/787.d4aba7ab.chunk.js",
+    "static/media/Landscape-Color.jpg": "/static/media/Landscape-Color.15acb824bff477d61d20.jpg",
+    "static/media/background.png": "/static/media/background.afe863047fa0de5c8d1d.png",
+    "static/media/neon-music-note-on-brick-wall-eps-10-vector-30103301.jpg": "/static/media/neon-music-note-on-brick-wall-eps-10-vector-30103301.86d08860bdb4a4710aa4.jpg",
+    "static/media/logo.png": "/static/media/logo.c0a3ae7c90f0c89d4b8e.png",
+    "static/media/news icon.jpg": "/static/media/news icon.f02c2df3f7fabe27fdfb.jpg",
+    "static/media/message icon.avif": "/static/media/message icon.eb440a711ae05acd5519.avif",
+    "static/media/settings icon.jpg": "/static/media/settings icon.b884c6ca29d7fee21e3d.jpg",
+    "index.html": "/index.html",
+    "main.2a3903bf.css.map": "/static/css/main.2a3903bf.css.map",
+    "main.837b893e.js.map": "/static/js/main.837b893e.js.map",
+    "506.5ff388e5.chunk.css.map": "/static/css/506.5ff388e5.chunk.css.map",
+    "506.1915b9ba.chunk.js.map": "/static/js/506.1915b9ba.chunk.js.map",
+    "866.dae3bd39.chunk.css.map": "/static/css/866.dae3bd39.chunk.css.map",
+    "866.b0952b24.chunk.js.map": "/static/js/866.b0952b24.chunk.js.map",
+    "787.d4aba7ab.chunk.js.map": "/static/js/787.d4aba7ab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2a3903bf.css",
+    "static/js/main.837b893e.js"
+  ]
+}
